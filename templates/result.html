@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='res.css') }}">
+</head>
+
+<body>
+    <div class="result-box">
+        <h2>Prediction Result</h2>
+        <p>{{ prediction_text }}</p>
+        <a href="{{ url_for('home') }}">← Go Back Home</a>
+    </div>
+</body>
+
+</html>

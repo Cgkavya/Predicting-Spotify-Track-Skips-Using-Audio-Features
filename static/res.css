@@ -1,0 +1,47 @@
+body {
+    background: url('/static/images/spotify-banner.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-box {
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 16px;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.result-box h2 {
+    color: #1DB954;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.result-box p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.result-box a {
+    display: inline-block;
+    background-color: #1DB954;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.result-box a:hover {
+    background-color: #1ed760;
+}
