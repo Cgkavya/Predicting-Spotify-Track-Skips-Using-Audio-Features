@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Spotify Skip Predictor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -13,21 +14,31 @@
     <main>
         <div class="form-container">
             <h2>Will your song be skipped?</h2>
+            {% if error %}
+            <div class="error-message">{{ error }}</div>
+            {% endif %}
             <form action="/predict" method="post">
-                <input type="number" name="danceability" step="0.01" placeholder="Danceability" required>
-                <input type="number" name="energy" step="0.01" placeholder="Energy" required>
-                <input type="number" name="speechiness" step="0.01" placeholder="Speechiness" required>
-                <input type="number" name="valence" step="0.01" placeholder="Valence" required>
-                <input type="number" name="instrumentalness" step="0.01" placeholder="Instrumentalness" required>
-                <input type="number" name="duration_ms" placeholder="Duration (ms)" required>
-                <input type="number" name="popularity" placeholder="Popularity" required>
-
-                <select name="genre" required>
+                <label for="genre">Genre</label>
+                <select name="genre" id="genre" required>
                     <option value="" disabled selected>Select Genre</option>
                     {% for g in genres %}
                     <option value="{{ g }}">{{ g.title() }}</option>
                     {% endfor %}
                 </select>
+                <label for="danceability">Danceability</label>
+                <input type="number" name="danceability" step="0.01" placeholder="Danceability" required>
+                <label for="energy">Energy</label>
+                <input type="number" name="energy" step="0.01" placeholder="Energy" required>
+                <label for="speechiness">Speechiness</label>
+                <input type="number" name="speechiness" step="0.01" placeholder="Speechiness" required>
+                <label for="valence">Valence</label>
+                <input type="number" name="valence" step="0.01" placeholder="Valence" required>
+                <label for="instrumentalness">Instrumentalness</label>
+                <input type="number" name="instrumentalness" step="0.01" placeholder="Instrumentalness" required>
+                <label for="duration_ms">Duration (ms)</label>
+                <input type="number" name="duration_ms" placeholder="Duration (ms)" required>
+                <label for="popularity">Popularity</label>
+                <input type="number" name="popularity" placeholder="Popularity" required>
 
                 <button type="submit" class="predict-btn">🎵 Predict</button>
             </form>

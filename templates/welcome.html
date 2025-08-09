@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Spotify Skip Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background: url('/static/images/spotify-banner.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            filter: blur(10px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .welcome-container {
+            position: relative;
+            z-index: 1;
+            background: rgba(25, 20, 20, 0.85);
+            border-radius: 24px;
+            padding: 80px 60px;
+            max-width: 900px;
+            min-width: 400px;
+            text-align: center;
+            box-shadow: 0 0 48px rgba(0, 0, 0, 0.5);
+        }
+
+        .welcome-container h1 {
+            font-size: 3.5rem;
+            margin-bottom: 32px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #1DB954;
+            text-shadow: 2px 2px 8px #000;
+        }
+
+        .welcome-container p {
+            font-size: 1.7rem;
+            margin-bottom: 40px;
+            color: #fff;
+            font-weight: 500;
+            text-shadow: 1px 1px 6px #000;
+        }
+
+        .welcome-btn {
+            background-color: #1DB954;
+            color: #000;
+            padding: 22px 60px;
+            border: none;
+            border-radius: 12px;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 30px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .welcome-btn:hover {
+            background-color: #1ed760;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="welcome-container">
+        <h1>Welcome to the Spotify Skip Predictor!</h1>
+        <p>Discover if your song will be skipped or played. Click below to get started.</p>
+        <a href="{{ url_for('home') }}">
+            <button class="welcome-btn">Start Predicting</button>
+        </a>
+    </div>
+</body>
+
+</html>
