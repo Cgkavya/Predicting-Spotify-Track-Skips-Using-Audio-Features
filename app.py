@@ -10,10 +10,17 @@ encoder = pickle.load(open("encoder.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 feature_names = pickle.load(open("model_features.pkl", "rb"))
 
+
 @app.route("/")
+def welcome():
+    return render_template("welcome.html")
+
+
+@app.route("/home")
 def home():
     genres = encoder.classes_.tolist()
     return render_template("home.html", genres=genres)
+
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -58,6 +65,7 @@ def predict():
 
     except Exception as e:
         return render_template("result.html", prediction_text=f"Error: {str(e)}")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

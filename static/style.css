@@ -12,6 +12,15 @@ header {
     text-align: center;
 }
 
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #b3b3b3;
+}
+
 .banner {
     max-width: 100%;
     height: auto;
